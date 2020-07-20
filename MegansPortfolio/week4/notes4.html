@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+        <meta charset="UTF-8">
+        <meta name="veiwport" content="width=device-width, initial-scale=1.0">
+        <title>Week 4 Notes</title>
+    </head>
+<body>
+
+    <h1>Notes for Week 4</h1>
+    <h2>Chapter 8 Forms</h2>
+    <ul>
+        <li><b>Form Controls</b></li>
+        <ul>
+            <li>It is possible to process a form on the "front end" before it is sent to the server using JavaScript</li>
+            <li>Parts of a form</li>
+            <ul>
+                <li>Action - is the URL that the form will be submmitted to so it can be processed on the server side</li>
+                <li>Name - name of the form used to identy the form for interactions</li> 
+            </ul>
+        </ul>
+        <li><b>Accessing Form Elemments</b></li>
+        <ul>
+            <li>The forms of a document are collected in a HTML collection. "document.forms" use index notation to access froms</li>
+            <li>Useful Properties and methods</li>
+            <ul>
+                <li>form.submit() - submit the form automatically.</li>
+                <li>form.reset() - reset all th form controls back to their initial values.</li>
+                <li>form.action() - set the action attribute of a form so it is sent to a different URL</li>
+
+            </ul>
+        </ul>
+        <li><b>Form Events</b></li>
+        <ul>
+            <li>Focus - the focus event occurs when a element is focused on result in some sort of highlight feature chosen by the coder.</li>
+            <li>blur - occurs when the user moves focus away from the form element.</li>
+            <li>change - occurs when the user moves the focus aways from the form element after changing it.</li>
+            <li>Submit - submits the form</li>
+        </ul>
+        <li><b>Submitting a form</b></li>
+        <ul>
+            <li>JavaScript can be used to intercept the form before it is sent by adding a submit event listener.</li>
+            <li>preventDefault() - will prevent the default action of an event</li>
+        </ul>
+        <li><b>Retrieving and Changing Values from a form</b></li>
+        <ul>
+            <li>Use Value property to retrieve text inside the field - <code>alert('You searched for: ${input.value}');</code></li>
+            <li>Value property can also be used to set the value - <code>input.value = 'Search here';</code></li>
+            <li>You can use blur and focus to remove or place the default value when the user starts to enter their value</li>
+            <ul>
+                <li>You can also achieve this by using the "placeholder" attribute</li>
+            </ul>
+            <li>Form Controls</li>
+            <ul>
+                <li><b>input</b> - fields, including text, passwords, check boxes, radio buttons, and file uploads</li>
+                <li><b>select</b> - menus for drop-down list of options</li>
+                <li><b>textarea</b> - elements for longer text entry</li>
+                <li><b>buttons</b> - elements for submitting and resetting forms</li>
+            </ul>
+            <li>Newer form attributs</li>
+            <ul>
+                <li><b>autofocus</b> - gives focus to this element when the page loads</li>
+                <li><b>maxlength</b> - will limit the number of characters that can be entered in the field.</li>
+            </ul>
+        </ul>
+        <li><b>Form validation</b></li>
+        <ul>
+            <li>The process of checking whether a user has entered the information into a form correctly.</li>
+            <li>Types of form validation</li>
+            <ul>
+                <li>Required - just add a required attribute to the tag</li>
+                <li>Using functions - add a funcition through event listener to check to see if certain requirements are met</li>
+                <li>preventDefault() - prevents the form from being submitted</li>
+                <li>Disable the submit button - add disabled attrubute to the input element</li>
+
+            </ul>
+        </ul>
+    
+    </ul>
+
+    <h2><b>Chapter 12 Object-Oriented Programming in JavaScript</b></h2>
+    <ul>
+        <li><b>Constructor Functions</b></li>
+        <ul>
+            <li>A function that defines the properties and methods of an object</li>
+            <li>this - is used to represent the object that will be returned by the constructor</li>
+        <li><b>Using Classes in JavaScrip</b></li>
+        <ul>
+            <li>Class declaration syntax - <code>class Dice {constructor(sides=6) { this.sides = sides; } }</code></li>
+        </ul>
+        </ul>
+        <li><b>Prototypes</b></li>
+        <ul>
+            <li>A way to augment a class with extra methods and properties after it has been created.</li>
+            <li>The memory for a prototype property only exists in one place</li>
+            <li>LIVE - If a new property or method is added to the prototype, any instances of its class will inherit the 
+                <br>new properties and methods automatically.
+            </li>
+        </ul>
+        <li><b>Public and Private methods</b></li>
+        <ul>
+            <li>By default, an object's methods are public in JavaScript.</li>
+            <li>it is possible to keep some properties and methods private inside of a class declaration.</li>
+        </ul>
+        <li><b>Inheritance</b></li>
+        <ul>
+            <li>The Prototype Chain - a prototype is an object that has it's own prototype and so on</li>
+            <li>Enumerable Properties - properties of objects in JavaScript that will show up when a for - in loop is used
+                <br>to loop through an objects properties and methods.
+            </li>
+            <li>Using 'extends' - the way a class can inherit from another class</li>
+            <li>Keyword 'super' - refers to the parent class and can be used to access any properties and call any methods of the parent class.</li>
+            <li>Polymorphism - different objects have the same method, but implement them in different ways.</li>
+
+        </ul>
+        <li><b>Creating Objects from other objects</b></li>
+        <ul>
+            <li>It is possible to avoid using classes altogether and create new objects based on another object that acts 
+                <br>as the prototype for the new object.
+            </li>
+
+        </ul>
+        <li><b>Adding Methods to Built-in Objects</b></li>
+        <ul>
+            <li>Monkey-Patching - the ability to add more methods to the prototype of JavaScript's built-in objects.</li>
+        </ul>
+        <li><b>Mixins</b></li>
+        <ul>
+            <li>A way of adding properties and methods of some objects to another object without using inheritance.
+                <br> - use Object.assign() method.
+            </li>
+            <li>mixin() function for deep copies - <code>function mixin(target, ...objects) { for(...) { loop through all the objects posessions
+                <br> and assign them to the new target.} return target;}
+            </code></li>
+            
+        </ul>
+        <li><b>Chaining functions</b></li>
+        <ul>
+            <li>A sequence of methods called one after the other - ex. <code>superman.fly().move().xray()</code></li>
+            
+        </ul>
+        <li><b>This and That</b></li>
+        <ul>
+            <li>Set a variable 'that' to equal 'this' before a nested function, and refer to that in the nested function instead of this.</li>
+            
+        </ul>
+        <li><b>Borrowing Methods from Prototypes</b></li>
+        <ul>
+            <li>borrow methods brom objects without having to inherit all their properties by making a reference to the function that you 
+                <br>want to borrow.
+            </li>
+        </ul>
+    </ul>
+    <h2>Chapter 15 Modular JavaScript</h2>
+    <ul>
+        <li><b>Modular JavaScript</b></li>
+        <ul>
+            <li>A Module is a self-contained piece of code that provides functions and methods that can then be used in other files and by other modules</li>
+            <li>All code in modules is always in strict mode without the need for 'use strict' and there is no way to opt out of this.</li>
+            <li>A module has its own global scope, so any variables created in the the top-level of a module can only be accessed within that module.</li>
+            <li>The value of this in the top level of a module is undefined, rather than the global object.</li>
+            <li>You can't use HTML-style comments in modules.</li>
+            <li>import ex. <code> import {PI} from './pi.js';</code></li>
+            <li> import all values and functions from a module ex. <code>import * as stats from './stats.js';</code></li>
+            
+        </ul>
+    </ul>
+
+    
+</body>
+</html>

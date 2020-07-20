@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example Code 10</title>
+    <style>
+        #error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <script defer src="form.js"></script>
+   
+    <h1>Form Validation</h1>
+    <p>This form uses JavaScript validation and checks for the following:</p>
+    <ul>
+        <li>If there is a name.</li>
+        <li>length of the password. (greater than 6 characters, less then 20 characters).</li>
+        <li>If the password is "password"</li>
+    </ul>
+    <div id="error"></div>
+    <form id="form" action="/" method="GET">
+        <div>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text">
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password">
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+    <h1>Using fetch</h1>
+    <h2>We are using the API openweather.com to fetch the weather in the entered city.</h2>
+    <p>what is the weather today?</p>
+    <label>Enter your city</label>
+    <input id="city" type="text">
+    <div id="weatherDiv"></div>
+    <br>
+    <button id="weatherBtn">Get Weather</button>
+    
+</body>
+</html>

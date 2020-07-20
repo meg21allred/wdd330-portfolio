@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="login" action="">
+        Email:<input id="username" type="email" value="user1@email.com">
+        <br>
+        Password:<input id="password" type="password" value="user1">
+        <input type="submit"/>
+    </form>
+    <div id="posts"></div>
+    <form name="postForm">
+        <div>
+          <label for="title">Title</label>
+          <input
+            type="text"
+            class="form-control"
+            name="title"
+            placeholder="title"
+            required
+          />
+        </div>
+        <div>
+          <label for="content">Content</label>
+          <input
+            type="text"
+            class="form-control"
+            name="content"
+            placeholder="content"
+            required
+          />
+        </div>
+        <div id="postError"></div>
+
+        <input type="submit" id="createSubmit" />
+      </form>
+      <ul id="list"></ul>
+    </div>
+    <script type="module" src="week11.js"></script>
+</body>
+</html

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Page</title>
+</head>
+<body>
+    <h1>Gotta Catch 'em All!</h1>
+    
+    <div id="pokeList"></div>
+
+    <button id="getPokemon" onclick="getPokemon('https://pokeapi.co/api/v2/pokemon')">Get Pokemon list</button>
+    <script>
+        const btn = document.querySelector("#getPokemon");
+
+        async function getPokemon(url) {
+            try {
+                const response = await fetch(url);
+                if(!response.ok) {
+                    throw Error(response.statusText)
+                } else {
+                    const fetchJson = await response.json();
+                    console.log(fetchJson);
+                    renderPokemon(fetchJson)
+                }
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+        function renderPokemon(data) {
+            const pokemonContainer = document.querySelector('#pokeList');
+            
+                if (data.next) {
+                   btn.textContent = "Show more";
+                   btn.setAttribute('onClick', `getPokemon('${data.next}')`);
+                    
+                } 
+                data.results.forEach(pokemon => {
+                    
+                    const listItem = document.createElement('li');
+                    
+                    listItem.innerHTML = 
+                    `
+                    <span class="poke-name">${pokemon.name}</span> <button class="view-btn" onclick="getDetails('${pokemon.name}', '${pokemon.url}')">View</button>
+                    `
+                    listItem.id = pokemon.name;
+                    
+                    pokemonContainer.appendChild(listItem);
+                })
+                
+        }
+
+        function getDetails(id, url) {
+            fetch(url)
+            .then( res => res.json() )
+            .then( data => {
+                console.log('DETAILS', data)
+                let li = document.getElementById(id);
+                let div = document.createElement('div');
+                let div2 = document.createElement('div');
+                div.innerHTML = 
+                `
+                    <img src="${data.sprites.front_default}" />
+                `
+                div2.innerHTML = 
+                `
+                    <p>Height: ${data.height}</p>
+                    <p>Weight: ${data.weight}</p>
+                    
+                `
+
+            li.lastElementChild.remove();
+            li.appendChild(div);
+            li.appendChild(div2);
+            })
+        }
+    </script>
+</body>
+</html>

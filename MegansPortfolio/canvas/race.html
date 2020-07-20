@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: cornflowerblue;
+        }
+        #playAgainBtn {
+            display: none;
+        }
+        
+        #pickTrack {
+            background-color: lightgray;
+            width: 800px;
+            font-size: 2em;
+        }
+        #hideRules {
+            display: none;
+        }
+        #rules {
+            background-color: lightgray;
+            width: 800px;
+            font-size: 1.3em;
+            display: none;
+        }
+        h1 {
+            font-size: 4em;
+            color: yellow;
+        }
+        .winner {
+            background-color: rgb(54, 81, 233);
+            color: rgb(41, 204, 41);
+            font-size: 4em;
+            width: 600px;
+
+        }
+        #weatherDiv {
+            color:navy;
+        }
+    </style>
+</head>
+<body>
+    
+    <center>
+        <div id="welcome">
+            <h1>Welcome to Climate Race!</h1>
+            <div id="rules">
+                <p>
+                    Enter a city to get the weather and when you start, 
+                    <br> a track will be loaded based on the climate of that city
+                    <br>
+                    <b>Keys:</b><br> Green car AKA "Green Machine": Arrow keys
+                        <br> Blue car AKA "Blue Storm": up = "w" down = "s" right = "a" left = "d"
+                        <br> First car to the finish line wins! 
+                        <br> Watch out for sticky mud and slippery puddles...
+                    </p>
+            </div>
+            <button id="showRules" onclick="showRules()">Show Rules</button>
+            <button id="hideRules" onclick="hideRules()">Hide Rules</button>
+        </div>
+        <div id="pickTrack">
+            <p>What is the weather today?</p>
+            <label>Enter your city</label>
+            <input id="city" type="text">
+            <button id="weatherBtn">Get Weather</button>
+            <div id="weatherDiv"></div>
+            <br>
+            <label for="">Once we know the weather we can start this race!</label>
+            <button onclick="loadNewtrack()">start</button>
+         </div>
+         <div class="winner">
+            
+         </div>
+         <button onclick="playAgain()" id="playAgainBtn">Play Again?</button>
+         <br>
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+    </center>
+    
+    
+    <script src="js/race.js"></script>
+    <script src="js/car.js"></script>
+    <script src="js/draw.js"></script>
+    <script src="js/track.js"></script>
+    <script src="js/weather.js"></script>
+</body>
+</html>

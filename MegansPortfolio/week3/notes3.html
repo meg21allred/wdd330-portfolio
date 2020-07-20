@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+        <meta charset="UTF-8">
+        <meta name="veiwport" content="width=device-width, initial-scale=1.0">
+        <title>Week 1 Notes</title>
+    </head>
+<body>
+
+    <h1>Notes for Week 3</h1>
+    <h2>Object Methods, "this"</h2>
+    <ul>
+        <li>Use a Function Expression to create the function and assign it to the property
+        <br> ex. - <code>user.sayHi = function() { alert("Hello!"); };</code></li>
+        <ul>
+            <li>Other versions of this code:</li>
+            <ul>
+                <li><code>user = { sayHi: function() { alert("Hell0!"); };</code></li>
+                <li><code>user = { sayHi() { alert("Hello"); } };</code></li>
+            </ul>
+        </ul>
+        <li>Use "this" to access information stored in the object
+            <br> ex. - Access the user name <code> sayHi() { alert(this.name); };</code>
+        </li> 
+        <li>Arrow functions do not have their own "this". This is usefull when we want to take "this" from outer context</li>
+    </ul>
+
+    <h2>Chapter 5 Object literals</h2>
+    <ul>
+        <li>Object literals use key value pairs separated by commas to organize their data</li>
+        <li>All objects are mutable when the program is running and can be changed even when declared const</li>
+        <li>To create an object, follow any variable with curly brackets
+            <br> ex. - <code>const spiderman = {};</code> ( to create an empty object use ex. const spiderman = new Object() )
+            <br> ES6 shorthand method of creating objects if the property key is the same as the variable name
+            <br> ex. - <code>const ironMan = {name, realName};</code>
+        </li>
+        <li>While dot notation is the most common way of accessing object properties, bracket notation is the only way to access
+            <br>properties that don't follow standard notation.
+        </li>
+        <li> Symbol() can be used as a key to add new properties to an object with square bracket notaion otherwise
+            <br> just delcare new variables with dot notation to add new properties to the object (superman.city = 'Metropolis').</li>
+        <li>Use the "in" operator to check to see if a property exists in an object or use hasOwnProperty() to 
+            <br>to make sure the property is not inherited.
+        </li>
+        <li>To delete a Object property - <code>delete superman.fly</code></li>
+        <il>If you assing a new variable to an existing object, it will reference the exact same object so and changes
+            <br> made to one with effect the other.
+        </il>
+        <li>parse() - Json to JavaScirpt</li>
+        <li>stringify() JavaScript to Json</li>
+        <li>to generate a ramdom number (integer) between 0 and any number use <code>Math.floor("anynumber" * Math.random()):</code></li>
+        
+    </ul>
+    <h2>Chapter 6 The Document Object Model</h2>
+    <ul>
+        <li>The DOM allows you to access elements of a web page and enable interaction with the page by adding and removing elements, 
+            <br>changing the order, content and attributes of elements, and even altering how they are styled.
+        </li>
+        <li>getElementsById("id") - be sure that each element has a unique id or funny things will happen to your document.</li>
+        <li>getElementsByTagName() - will return a live node list of ALL the elements with the tag name that is provided as an argument.</li>
+        <li>getElementsByClassName() - will return a live node list of all elements that have the class name that is supplied as an arguement.</li>
+        <li>document.querySelector() - allows you to use CSS notation to find the first element in the document that matches a CSS selector
+            <br>provided as an argument.
+        </li>
+        <li>set attribute and get attribute - <code> wonderWomen.setAttribute('id', 'amazon');</code>, <code>wonderWomen.getAttribute('id');</code> = 'amazon'
+            <ul>for attributes 'class' and 'for' you must used 'className' and 'htmlFor'</ul>
+        </li>
+        <li>Creating an element <code>const flash = document.creatElement('li');</code> </li>
+        <ul>
+            <li>To fill the element, create a text node - <code>const flashText = document.createTextNode('Flash');</code></li>
+            <li>To link the element and the text node together, use appendChild() - <code>flash.appendChild(flashText);</code></li>
+            <li>easier way - <code>const flash = document.createElement('li'); flash.textConten = 'Flash';</code></li> 
+            <li>Best to use a function so code does not become repetative - <br>
+                <code>Function createElement(tag, text) { const el = document.createElement(tag); el.testDContent = text; return el }</code></li>
+            <li>Adding new element to the page - <code> heroes.appendChild(flash)</code></li>
+            <li>other useful functions include insertAfter(), removeChild(), and  replaceChild()</li>
+        </ul>
+    </ul>
+    <h2>Chapter 7 Events</h2>
+    <ul>
+        <li>The reccomended way to use event listeners - <coded>document.body.addEventListener('click', doSomething);</coded></li>
+        <li>to include swipe events a combination of touchstart, touchmove, and touchleave must be used.</li>
+        <li>touch event objects have a property called touches that can return the number of touches happening at the same time.</li>
+        <li>Capturing - The addEventListener() method has a third parameter, which is a boolean value that specifies whether capturing should
+            <br> be used or not. It defaults to false </li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+        <meta charset="UTF-8">
+        <meta name="veiwport" content="width=device-width, initial-scale=1.0">
+        <title>Week 1 Notes</title>
+    </head>
+<body>
+
+    <h1>Notes for Week 2</h1>
+    <h2>Chapter 2 Programing Basics</h2>
+    <ul>
+        <li>New features for ES6
+            <ul>
+                <li>"var" has been replaced with "let." </li>
+                <li> The function <code>startsWith()</code> - finds the first character in a String.</li>
+                <li> The function <code>endsWith()</code> - finds the last character in a String.</li>
+                <li> Template Literals - using "`" in place of quotation marks for strings allow<br>
+                both types of quotation marks to be used in one string. They also allow \n type <br>
+                characters as well as JavaScript expressions with "$" in front of "{}".</li>
+                <li> New primitive value "Symbols - used to create unique values" you mush use <br> 
+                    <code>Symbol()</code> function to create them.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>Chapter 3 Arrays, Logic and Loops</h2>
+    <ul>
+        <li>Destructuring Arrays</li>
+        <ul>
+            <li>taking values out of an array and presenting them as individual values</li>
+            <li>allows the ability to assign multiple values at the same time.
+                <br> ex. const [x,y] = [1,2];
+            </li>
+            <li>Allows the ability to swap the value of two variables without having to use a temp. variable.</li>
+            <br> ex. [x,y] = [y,x];
+        </ul>
+        <li>Spread operator ( ... ) - placed at the front of the array to spread the elements of the array and can been
+            <br> used to put two arrays together in a new array.
+        </li>
+        <li>Splice() - is very useful for inserting, replacing and completely removing items from an array.</li>
+        <ul>
+            <li>insert - <code>array.splice[4(index to insert), 0 (number of items to remove before inserting), "item" (item to insert in this case a string)</code></li>
+            <li>replace - <code>array.splice(4,1,"item")</code></li>
+            <li>remove - <code>array.splic(4,1 (last parameter is left blank because you don't want to replace it with anything))</code></li>
+        </ul>
+        <li>includes - array.includes("item") returns true or false and can include extra paramenter to indicare what indext to star the search from.</li>
+        <li>Convert Sets to Arrays - <code>const shoppingArray = [...shoppingSet]</code> or <code>const shoppingArray = Array.from(shoppingSet);</code></li>
+        <li>Convert Maps to Nested arrays in much the same way as sets to arrays.</li>
+        <li>Ternary Operator - condition ? (//code to run if condition is true) : (//code to run if condition is false)</li>
+        
+
+    </ul>
+    <h2>Chapter 4 Functions</h2>
+    <ul>
+        <li>Defining functions:</li>
+        <ul>
+            <li>Function Declarations - Function hello() { code...}</li>
+            <li>Function Expressions - const goodbye = function() { code... } <br>
+                                        const goodbye = function bye() {code...}</li>
+            <li>Function Constructors - const hi = new Function('code..'); (not recommended)</li>
+            <li>Arrow Functions - const square = x => x*x; (always annon. so must be assigned to a variable.</li>
+        </ul>
+        <li>Default parameters - assigns a default value to the parameters if no arguement is given <br>
+        ex. function hello(name='World') 
+        <ul>
+            <li>default values should always come after not default values or the function will not work correctly.
+            </li>
+        </ul>
+        <li>Callbacks - A function that is passed as an argument to another</li>
+        <li>ForEach() - similiar to a for loop - ex. <code>colors.forEach(color, index) => 
+            console.log('color at position ${index} is ${color}'); 
+        </code></li>
+        <li>Map() - iterates over an array and takes a callback function as a parameter that is invoked on each item.
+            <br> ex. <code>[1,2,3,].map(x => 2 * x);</code>
+        </li>
+        <li>filter() - returns a new array that contains only items that are true when passed to the callback.</li>
+        <li>Chaining iterators - using more than one iterator function to create powerful transformations of data in arrays.
+            <br> ex. <code>const sales = [100, 200, 55]; <br>
+                           totalAfterSalesTax = sales.map( (amount) => amount * 1.15).reduce( (acc,val) => acc + val);</code>
+                           <br> output - 442.75
+        </li>
+
+    
+    </li>
+    </ul>
+</body>
+</html>

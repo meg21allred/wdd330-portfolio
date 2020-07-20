@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 9 Notes</title>
+    <style>
+        #square {
+    margin: 100px;
+    width: 100px;
+    height: 100px;
+    background: #d16;
+}
+    </style>
+</head>
+<body>
+    <h1>Week 9 Notes</h1>
+
+    <h1>Chapter 9 The Window Object</h1>
+    <h2>The Browser Object Model</h2>
+    <ul>
+        <li><strong>Definition</strong> - a collection of porperties and methods that contain information about the browser and computer screen.</li>
+        <li><b>Global variables </b> - variables created without the use of const, let or var keywords, and can be accesses in all parts of the program.
+            this variable is part of the gobal object. ex. <code>x - 6 window.x << 6</code>.
+       </li>
+    </ul>
+    <h2>Finding out Browser Informations</h2>
+    <ul>
+        <li><b>Which Browser</b> - The window object has a navigator property that returns to the Navigator object. The Navigator object contains
+        information about the browser being used.</li>
+        
+    </ul>
+    <h2>Browser History</h2>
+    <ul>
+        <li><b>window.history</b> - can be used to access information about any previously visited pages in the current browser session.</li>
+        <li><b>Controlling Windows</b> - a new window can be opened using window.open() this takes the URL of the page to be opened as its first parameter, 
+        the window title as its second parameter, and a list of attributes as the third parameter. </li>
+    </ul>
+    <h2>Cookies</h2>
+    <ul>
+        <li><b>Definition</b> - small files that are saved locally on a user's computer as a way of getting round HTTP being a stateless protocol.</li>
+        <li>To set a cookie - <code>document.cookie = 'name=Superman';</code></li>
+        <li>cookies can be given a date to expire.</li>
+        <li>Adding the string <code>; secure</code> to the end of a cookie will ensure it's only transmitted over a secure HTTPS network.</li>
+    </ul>
+    <h2>Timing Functions</h2>
+    <ul>
+        <li>The window object provides some useful methods for scheduling the execution of a function, and for repeatedly executing functions
+            at regular intervals.
+        </li>
+        <li>window.setTimeout() - accepts a callback to a function as its first parameter and a number of milliseconds as its second.</li>
+        <li>setInterval() - same as timeout but it will repeatedly invoke the callback function after every given number of milliseconds.</li>
+        <li>setTimeout() and setInterval() can be used for animations, though requestAnimationFrame() is an improved way of doing the saem thing.</li>
+    </ul>
+    
+    <div id='square'></div>
+
+    <h1>Chapther 14 HTML5 APIs</h1>
+
+    <h2>HTML5 and the JavaScript APIs</h2>
+    <ul>
+        <li>A helpful site to check if specific features can be used in your browser: <a href="https://caniuse.com/">Can I use</a></li>
+    </ul>
+    <h2>The "<code>data-</code>" attribute</h2>
+    <ul>
+        <li><b>Defintion</b>- a way of embedding data in a web page using custom attributes that are ignored by the browser. there sole
+        purpose is to be used by the JavaScript program.</li>
+    </ul>
+    <h2>Local Storage, Geolocation, Web Workers, and Multimedia</h2>
+    <ul>
+        <li>APIs help websites gain access to hardware, such as cameras, batteries, Geolocation, and graphics cards. It is best practice
+            to use feature detection before using any of the API methods.
+        </li>
+        <li><b>Web Storage</b></li>
+        <ul>
+            <li>Provides key-value storage on the clients computer that is similar to cookies but has fewer restrictions.</li>
+            <li>Web Storage API means that the window object will have a property callse <code>localStorage</code>.</li>
+            <li>To save objects to local storage use stringify() and parse() to retrieve it.</li>
+        </ul>
+        <li><b>Geolocation</b></li>
+        <ul>
+            <li>Obtains the geographical position of the device being used.</li>
+        </ul>
+        <li><b>Web Workers</b></li>
+        <ul>
+            <li>Allow the processes to be run in the background, adding support for concurrency in JavaScript.</li>
+        </ul>
+        <li><b>Websockets</b></li>
+        <ul>
+            <li>Allows two-way communication with the server - aKa - push messaging.</li>
+        </ul>
+        <li><b>Notifications</b></li>
+        <ul>
+            <li>show messages using the system's notifications, such as a popup in the corner or the screen.</li>
+        </ul>
+        <li><b>Multimedia</b></li>
+        <ul>
+            <li>Audio and video tags used to insert audio and video clips into a web page.</li>
+        </ul>
+        </ul>
+    <h2>Shims and Polyfills</h2>
+    <ul>
+        <li>Libraries of code that allow you to use the APIs as usual using the necessary code that is not provieded natively by the 
+            user's browser.
+        </li>
+    </ul>
+<script src='example.js'></script>
+</body>
+</html>

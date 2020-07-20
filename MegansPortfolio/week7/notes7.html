@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes for week 7</title>
+</head>
+<body>
+    <h1>Notes for Week 7</h1>
+
+    <h2>Chapter 11 Further Functions</h2>
+    <ul>
+        <li><b>Function Properties and Methods</b></li>
+        <ul>
+            <li>The call() method can be used to set the value of "this" inside a function to an object that is provided as the first arugment. ex. sayHello.call(clark)</li>
+            <li>If a function doesn't refer to an object as "this" in its body, it can still be called using the call() method, but you need to provide "null" as its first arugment.</li>
+            <li><b>Custom properties</b> - adding your own properties to functions.</li>
+            <li><b>Memoization</b>- a feature that provides result caching. You might want to do this if the result you are computing takes a lot of time. <br>
+                ex. square.cache; << {"3": 9, "-11" : 121 }</li>
+        </ul>
+        <li><b>Immediately Invoked Function Expressions</b></li>
+        <ul>
+            <li><b>Definition -</b> an anonymous function that is invoked as soon as it's defined.</li>
+            <li>iffes are a usef way of performing a task while keeping any variables wrapped up within the scope of the function.<br></li>
+            <li>Good uses for IFFEs</li>
+            <ul>
+                <li>Temporary Variables</li>
+                <li>Initialization Code</li>
+                <li>Safe Use of Strict Mode</li>
+                <li>Creating Self-contained Code Blocks</li>
+
+            </ul>
+        </ul>
+        <li><b>Self-defining Functions</b></li>
+        <ul>
+            <li><b>Definition - </b>a functions that is able to call itself and also define itself and even redefine itself.</li>
+            <li><b>Init-Time Branching -</b>A technique that can be used with the feature detection to create functions that rewrite themselves.</li>
+
+        </ul>
+        <li><b>Recursive Functions</b></li>
+        <ul>
+            <li><b>Defintion -</b>a function that invokes itself until a certain condtion is met.</li>
+        </ul>
+        <li><b>Callbacks</b></li>
+        <ul>
+            <li><b>Definition -</b>functions passed to other functions as arguments and then invoked inside the 
+            <br>function they are passed to.</li>
+            <li>Used to facilitate -<b>Event-driven Asynchronous Programming</b>which means only one piece of code with be processed at a time.</li>
+            <ul><li>used to ensure waiting for tasks to complete doesn't hold up the execution of other parts of the program.</li></ul>
+
+        </ul>
+        <li><b>Promises</b></li>
+        <ul>
+            <li><b>Definition - </b>represents the future result of an Asynchronous operation.</li>
+            <li>The Promise life-cycle</li>
+            <ul>
+                <li>Resovled - the Asynchronous operation was completed successfully.</li>
+                <li>Rejected - the Asynchronous operation didn't work, didn't complete or resulted in an error.</li>
+            </ul>
+            <li><b>A Super Promise</b> - a pending phase while you wait on the result of an operation, then deal with the results in a proper way.</li>
+            <li>ex - const promise = new Promise( (resolve, reject) => {
+                // initialization code goes here
+                if (success) {
+                    resolve(value);
+                } else {
+                    reject(error);
+                }
+            });const promise = new Promise( (resolve, reject) => {
+                // initialization code goes here
+                if (success) {
+                    resolve(value);
+                } else {
+                    reject(error);
+                }
+            });</li>
+        </ul>
+        <li><b>Async Functions</b></li>
+        <ul>
+            <li><b>Definition - </b>Functions preceded by the "async" keyword that allow you to write Asynchronous code as if it was synchronus.</li>
+
+        </ul>
+        <li><b>Closures</b></li>
+        <ul>
+            <li><b>Definition - </b>a reference to a variable that was created inside the scope of another function, but is then kept alive and used in another part of the program</li>
+            <li><b>Generators - </b>special functions used to produce iteratiors that maintain the state of a value.</li>
+        </ul>
+        <li><b>Introductions to Functional Programming</b></li>
+        <ul>
+            <li>The ability to pass functions as arguments, return them from other functions, and use anonymous functions and closures, are all fundamental elements of functional programming.</li>
+            <li><b>Pure Function features</b></li>
+            <ul>
+                <li>Return value should only depend on the values provided as arguments.</li>
+                <li>There are no side effects.</li>
+                <li>Referential transparency.</li>
+                <li>Must have at least one argument.</li>
+                <li>Must have a return value.</li>
+
+            </ul>
+        </ul>
+        <li><b>Currying</b></li>
+        <ul>
+            <li><b>Definition -</b> a process that involves the partial application of functions.</li>
+        </ul>
+    </ul>
+
+    <h1>Chapter 13 Ajax</h1>
+    <ul>
+        <li><b>Communicating with the Server Using Fetch API</b></li>
+        <ul>
+            <li>Fetch API - a living standard for requesting and sending data asynchronously across a network.</li>
+            <li>JSON Responses - the method used to deal with transforming data into a promise thah resolves to a JavaScript object </li>
+            <li>Request InterFace - Request object that allows a numver of options to ve set about the request.</li>
+            <ul>
+                <li>Request() constructor</li>
+                <ul>
+                    <li>url - The URL of the requested resource.</li>
+                    <li>method - a string that specifies which HTTP method should be used for the request. ('GET' or 'POST')</li>
+                    <li>headers - provides details of the request's headers</li>
+                    <li>mode - allows you to specify if CORS is used or not.</li>
+                    <li>cache - allows you to specify how the request will use the browser's cache.</li>
+                    <li>credentiols - lets you specify if cookies should be allowed with the request.</li>
+                    <li>redirect - specifies what to do if the response returns a redirect.</li>
+                </ul>
+            </ul>
+        </ul>
+
+        <li><b>Form Data</b></li>
+        <ul>
+            <li>If a form is passed to the FormData() constructor function as an argument, the form data instance will serialize all the data automatically, ready to be sent using Ajax.</li>
+        </ul>
+    </ul>
+</body>
+</html>
